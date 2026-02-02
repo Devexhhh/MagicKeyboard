@@ -2,6 +2,7 @@
 
 import { keyWidths, baseKey, keyAlignment } from "./keyVariants";
 import { KeyConfig } from "@/types/keyboard";
+import { fnIcons } from "@/lib/fnIcons";
 
 export function Key({
     label,
@@ -9,6 +10,7 @@ export function Key({
     bottom,
     width = "md",
     align = "center",
+    fn = false,
 }: KeyConfig) {
     return (
         <div
@@ -20,15 +22,30 @@ export function Key({
         hover:bg-zinc-800 active:scale-95 transition
       `}
         >
-            {top && (
-                <span className="text-sm text-zinc-400">
-                    {top}
-                </span>
+            {/* Function key (icon on top, label bottom) */}
+            {fn && label && (
+                <>
+                    <span className="flex justify-center text-zinc-300">
+                        {fnIcons[label]}
+                    </span>
+                    <span className="text-xs">
+                        {label}
+                    </span>
+                </>
             )}
+            {!fn && (
+                <>
+                    {top && (
+                        <span className="text-sx text-zinc-400">
+                            {top}
+                        </span>
+                    )}
 
-            <span className="text-sm">
-                {bottom ?? label}
-            </span>
+                    <span className="text-xs">
+                        {bottom ?? label}
+                    </span>
+                </>
+            )}
         </div>
     );
 }

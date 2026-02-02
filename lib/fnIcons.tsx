@@ -12,6 +12,8 @@ import {
     VolumeX,
     Volume1,
     Volume2,
+    Circle,
+    Dot,
 } from "lucide-react";
 
 export const fnIcons: Record<string, ReactNode> = {
@@ -27,4 +29,6 @@ export const fnIcons: Record<string, ReactNode> = {
     F10: <VolumeX size={16} />,
     F11: <Volume1 size={16} />,
     F12: <Volume2 size={16} />,
+    " ": <Circle size={40} strokeWidth={0.4} className="text-gray-500" />,
+    capslock: <Dot size={20} className="text-red-500" />
 };

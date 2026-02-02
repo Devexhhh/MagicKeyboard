@@ -13,5 +13,8 @@ export type KeyConfig = {
     bottom?: string;
     width?: KeyWidth;
     align?: KeyAlign;
+
+    fn?: boolean;
 };
+
 

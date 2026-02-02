@@ -3,19 +3,19 @@ import { KeyConfig } from "@/types/keyboard";
 export const keyboardLayout: KeyConfig[][] = [
     [
         { label: "esc", width: "lg", align: "baseline-start" },
-        { label: "F1" },
-        { label: "F2" },
-        { label: "F3" },
-        { label: "F4" },
-        { label: "F5" },
-        { label: "F6" },
-        { label: "F7" },
-        { label: "F8" },
-        { label: "F9" },
-        { label: "F10" },
-        { label: "F11" },
-        { label: "F12" },
-        { label: "" }
+        { label: "F1", fn: true },
+        { label: "F2", fn: true },
+        { label: "F3", fn: true },
+        { label: "F4", fn: true },
+        { label: "F5", fn: true },
+        { label: "F6", fn: true },
+        { label: "F7", fn: true },
+        { label: "F8", fn: true },
+        { label: "F9", fn: true },
+        { label: "F10", fn: true },
+        { label: "F11", fn: true },
+        { label: "F12", fn: true },
+        { label: " ", fn: true }
     ],
     [
         { label: "`", top: "~", bottom: "`" },
@@ -45,12 +45,12 @@ export const keyboardLayout: KeyConfig[][] = [
         { label: "I" },
         { label: "O" },
         { label: "P" },
-        { label: "[" },
-        { label: "]" },
-        { label: "\\" }
+        { top: "{", bottom: "[" },
+        { top: "}", bottom: "]" },
+        { top: "|", bottom: "\\" }
     ],
     [
-        { top: ".", bottom: "capslock", width: "xl", align: "baseline-start" },
+        { label: "capslock", width: "xl", align: "baseline-start", fn: true },
         { label: "A", },
         { label: "S" },
         { label: "D" },
