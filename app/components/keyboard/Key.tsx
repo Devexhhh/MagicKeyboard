@@ -22,7 +22,6 @@ export function Key({
         hover:bg-zinc-800 active:scale-95 transition
       `}
         >
-            {/* Function key (icon on top, label bottom) */}
             {fn && label && (
                 <>
                     <span className="flex justify-center text-zinc-300">
