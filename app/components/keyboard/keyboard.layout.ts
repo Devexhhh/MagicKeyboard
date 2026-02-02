@@ -79,15 +79,12 @@ export const keyboardLayout: KeyConfig[][] = [
         { top: "⇧", bottom: "shift", width: "xll", align: "baseline-end" },
     ],
     [
-        { label: "fn", align: "baseline-start" },
+        { label: "fn", align: "baseline-start", fn: true },
         { top: "⌃", bottom: "control", align: "baseline-start" },
         { top: "⌥", bottom: "option", align: "baseline-start" },
         { top: "⌘", bottom: "command", width: "cm", align: "baseline-start" },
         { label: "", width: "space" },
         { top: "⌘", bottom: "command", width: "cm", align: "baseline-end" },
         { top: "⌥", bottom: "option", align: "baseline-end" },
-        { label: "l" },
-        { label: "d" },
-        { label: "r" },
     ],
 ];
