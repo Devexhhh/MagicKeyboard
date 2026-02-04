@@ -46,7 +46,7 @@ export function Key({
                     <span className="flex justify-center text-zinc-300">
                         {fnIcons[label]}
                     </span>
-                    <span className="text-[10px] text-zinc-500 text-center tracking-wide">
+                    <span className="text-[14px] text-center tracking-wide">
                         {label}
                     </span>
                 </>
