@@ -1,9 +1,9 @@
 "use client";
 
 import { keyWidths, baseKey, keyAlignment } from "./keyVariants";
-import { KeyConfig } from "@/types/keyboard";
 import { fnIcons } from "@/lib/fnIcons";
 import { arrowIcons } from "@/lib/arrowIcons";
+import { NormalKey } from "@/types/keyboard";
 
 export function Key({
     label,
@@ -14,7 +14,8 @@ export function Key({
     fn = false,
     arrow,
     arrowSize = "full",
-}: KeyConfig) {
+}: NormalKey) {
+
 
     const heightClass = arrow
         ? arrowSize === "half"
@@ -30,7 +31,12 @@ export function Key({
         ${keyAlignment[align]}
         ${heightClass}
         flex flex-col gap-1.5
-        hover:bg-zinc-800 active:scale-95 transition
+        shadow-[inset_0_0_0_1px_rgba(255,255,255,0.50),0_0_10px_rgba(255,255,255,0.45)]
+        hover:scale-[1.04]
+        hover:-translate-y-0.5
+       active:bg-zinc-800
+         active:shadow-[inset_0_0_0_1px_rgba(48,82,255,0.9),0_0_20px_rgba(48,82,255,1)]
+         active:scale-[0.97]
       `}
         >
             {/* Arrow key */}
