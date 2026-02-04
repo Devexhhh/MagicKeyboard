@@ -2,6 +2,7 @@ export type KeyWidth = "sm" | "md" | "lg" | "xl" | "xll" | "space" | "cm";
 export type ArrowType = "up" | "down" | "left" | "right";
 export type ArrowSize = "half" | "full";
 
+
 export type KeyAlign =
     | "center"
     | "start"
@@ -10,17 +11,22 @@ export type KeyAlign =
     | "baseline-end";
 
 
-export type KeyConfig = {
+export type NormalKey = {
     label?: string;
     top?: string;
     bottom?: string;
     width?: KeyWidth;
     align?: KeyAlign;
-
     fn?: boolean;
-    arrow?: ArrowType;
-    arrowSize?: ArrowSize;
+    arrow?: "up" | "down" | "left" | "right";
+    arrowSize?: "full" | "half";
 };
+
+export type ArrowClusterKey = {
+    type: "arrowCluster";
+};
+
+export type KeyConfig = NormalKey | ArrowClusterKey;
 
 
 
