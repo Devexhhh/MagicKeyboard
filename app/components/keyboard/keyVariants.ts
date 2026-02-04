@@ -8,15 +8,21 @@ export const keyWidths = {
     space: "w-[350px]",
 };
 
+export const keyHeights = {
+    normal: "h-15.5",
+    arrowFull: "h-15.5",
+    arrowHalf: "h-7.2",
+};
+
+
 export const baseKey =
-    "h-15.5 w-16 rounded-xl bg-zinc-900 text-zinc-100 text-sm flex items-center justify-center select-none shadow-[inset_0_-2px_4px_rgba(255,255,255,0.12)]";
+    "rounded-[8px] w-16 bg-zinc-900 text-zinc-100 shadow-[inset_0_-2px_4px_rgba(255,255,255,0.12)]";
+
 
 export const keyAlignment: Record<string, string> = {
     center: "items-center justify-center text-center",
-
     start: "items-start justify-start text-left",
     end: "items-end justify-end text-right",
-
     "baseline-start":
         "items-baseline justify-end items-start pb-2 pl-2.5",
 
