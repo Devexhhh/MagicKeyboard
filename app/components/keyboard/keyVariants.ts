@@ -15,9 +15,25 @@ export const keyHeights = {
 };
 
 
-export const baseKey =
-    "rounded-[8px] w-16 bg-zinc-900 text-zinc-100 shadow-[inset_0_-2px_4px_rgba(255,255,255,0.12)]";
+export const baseKey = `
+bg-gradient-to-b from-zinc-800/80 to-zinc-900
+relative
+rounded-lg
+bg-zinc-900
+text-zinc-100
+cursor-pointer
 
+shadow-[
+  0_0_18px_rgba(255,255,255,0.28),
+  0_0_36px_rgba(255,255,255,0.18),
+  0_0_64px_rgba(255,255,255,0.08),
+  inset_0_0_0_1px_rgba(255,255,255,0.08)
+]
+
+transition-all
+duration-200
+ease-out
+`;
 
 export const keyAlignment: Record<string, string> = {
     center: "items-center justify-center text-center",
