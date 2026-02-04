@@ -86,5 +86,6 @@ export const keyboardLayout: KeyConfig[][] = [
         { label: "", width: "space" },
         { top: "⌘", bottom: "command", width: "cm", align: "baseline-end" },
         { top: "⌥", bottom: "option", align: "baseline-end" },
+        { type: "arrowCluster" },
     ],
 ];
