@@ -23,15 +23,20 @@ export default function Home() {
       before:bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.10)_55%,rgba(0,0,0,0.5)_100%)]
       "
       >
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center items-center px-2">
           <div
             className="
-          origin-center
-          scale-[0.45]
-          sm:scale-[0.65]
-          md:scale-[0.85]
-          lg:scale-100
-        "
+    origin-center
+    [zoom:0.29]
+    sm:[zoom:0.34]
+    md:[zoom:0.39]
+    lg:[zoom:0.69]
+    xl:[zoom:0.85]
+    2xl:[zoom:1]
+    3xl:[zoom:1.1]
+    4xl:[zoom:1.3]
+    5xl:[zoom:1.6]
+  "
           >
             <Keyboard />
           </div>
