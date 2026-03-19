@@ -35,7 +35,7 @@ export default function Home() {
           className="hero-main relative flex-1 flex flex-col items-center justify-center overflow-hidden"
           style={{
             backgroundColor: "#F4F2ED",
-            backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.16) 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.09) 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         >
