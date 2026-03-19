@@ -1,26 +1,31 @@
 export function Footer() {
     return (
-        <footer
-            className="
-      relative
-      w-full
-      h-12
-      flex items-center justify-center
-      text-sm
-      font-(--font-funnel)
-      
+        <>
+            <style>{`
+        .ft-right { display: none; }
+        @media (min-width: 480px) { .ft-right { display: block; } }
+      `}</style>
 
-      bg-zinc-900 text-white
-
-      bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)]
-      bg-size-[20px_20px]
-
-      border-t border-white/10
-      "
-        >
-            <p className="text-sm tracking-tighter text-zinc-300">
-                © {new Date().getFullYear()} Devex — Magic Keyboard UI
-            </p>
-        </footer >
+            <footer
+                style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontWeight: 300,
+                    height: "44px",
+                    background: "#111110",
+                    borderTop: "1px solid rgba(255,255,255,0.055)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "0 clamp(1rem, 4vw, 2.5rem)",
+                    fontSize: "10px",
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.20)",
+                }}
+            >
+                <span>© {new Date().getFullYear()} Devex</span>
+                <span className="ft-right">Magic Keyboard UI</span>
+            </footer>
+        </>
     );
 }
