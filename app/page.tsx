@@ -27,8 +27,8 @@ export default function Home() {
 
         <Navbar />
 
-        {/* ── Background Grid & Vignette ── */}
-        <div className="absolute inset-0 top-12 sm:top-14 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-0" />
+        {/* ── Modern Dotted Background Pattern & Vignette ── */}
+        <div className="absolute inset-0 top-12 sm:top-14 bg-[radial-gradient(#00000022_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none z-0" />
         <div className="absolute inset-0 top-12 sm:top-14 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_20%,#F9F8F6_100%)] pointer-events-none z-0" />
 
         {/* Main content wrapper */}
