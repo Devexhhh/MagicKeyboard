@@ -6,154 +6,75 @@ export default function Home() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Outfit:wght@300;400;500&display=swap');
+        /* ── MAXIMIZED ZOOM LEVELS ── */
+        .kb-zoom { zoom: 0.30; }
+        @media (min-width: 380px)  { .kb-zoom { zoom: 0.40; } }
+        @media (min-width: 480px)  { .kb-zoom { zoom: 0.55; } }
+        @media (min-width: 640px)  { .kb-zoom { zoom: 0.70; } }
+        @media (min-width: 768px)  { .kb-zoom { zoom: 0.90; } }
+        @media (min-width: 1024px) { .kb-zoom { zoom: 1.20; } }
+        @media (min-width: 1280px) { .kb-zoom { zoom: 1.45; } }
+        @media (min-width: 1536px) { .kb-zoom { zoom: 1.70; } }
 
-        .kb-zoom { zoom: 0.22; }
-        @media (min-width: 380px)  { .kb-zoom { zoom: 0.27; } }
-        @media (min-width: 480px)  { .kb-zoom { zoom: 0.34; } }
-        @media (min-width: 640px)  { .kb-zoom { zoom: 0.40; } }
-        @media (min-width: 768px)  { .kb-zoom { zoom: 0.50; } }
-        @media (min-width: 1024px) { .kb-zoom { zoom: 0.68; } }
-        @media (min-width: 1280px) { .kb-zoom { zoom: 0.80; } }
-        @media (min-width: 1536px) { .kb-zoom { zoom: 0.94; } }
-
-        .spec-strip { flex-wrap: wrap; justify-content: center; gap: 10px 18px; }
-        @media (min-width: 640px) { .spec-strip { gap: 0 20px; flex-wrap: nowrap; } }
-
-        .spec-diamond { display: none; }
-        @media (min-width: 640px) { .spec-diamond { display: inline; } }
-
-        .hero-main { padding: 48px 16px 40px; }
-        @media (min-width: 640px) { .hero-main { padding: 56px 24px 48px; } }
-        @media (min-width: 1024px) { .hero-main { padding: 72px 32px 64px; } }
+        /* Strict height fallbacks for laptops (wide but short screens) so the huge keyboard doesn't clip the footer */
+        @media (max-height: 900px) and (min-width: 1280px) { .kb-zoom { zoom: 1.20 !important; } }
+        @media (max-height: 800px) and (min-width: 1024px) { .kb-zoom { zoom: 0.95 !important; } }
+        @media (max-height: 700px) and (min-width: 768px)  { .kb-zoom { zoom: 0.70 !important; } }
       `}</style>
 
-      <div style={{ fontFamily: "'Outfit', sans-serif" }} className="flex flex-col min-h-screen">
+      {/* 100dvh locks it to exactly one viewport height, overflow-hidden prevents all scrolling */}
+      <div className="flex flex-col h-[100dvh] w-full overflow-hidden font-['Outfit'] bg-[#F9F8F6] text-neutral-900 selection:bg-neutral-200 relative">
+
         <Navbar />
 
-        <main
-          className="hero-main relative flex-1 flex flex-col items-center justify-center overflow-hidden"
-          style={{
-            backgroundColor: "#F4F2ED",
-            backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.09) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        >
-          {/* Vignette */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse 85% 80% at 50% 50%, transparent 40%, #F4F2ED 100%)",
-            }}
-          />
+        {/* ── Background Grid & Vignette ── */}
+        <div className="absolute inset-0 top-12 sm:top-14 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-0" />
+        <div className="absolute inset-0 top-12 sm:top-14 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_20%,#F9F8F6_100%)] pointer-events-none z-0" />
 
-          {/* ── Eyebrow ── */}
-          <p
-            className="relative z-10 text-center"
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 300,
-              fontSize: "10px",
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              color: "#a09b91",
-              marginBottom: "clamp(12px, 2vw, 20px)",
-            }}
-          >
-            Apple Magic Keyboard
-          </p>
+        {/* Main content wrapper */}
+        <main className="relative flex-1 flex flex-col items-center justify-between w-full h-full pt-4 sm:pt-6 pb-4 px-4 sm:px-6 z-10">
 
-          {/* ── Headline ── */}
-          <h1
-            className="relative z-10 text-center"
-            style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontWeight: 700,
-              fontSize: "clamp(1.65rem, 5vw, 3rem)",
-              lineHeight: 1.12,
-              letterSpacing: "-0.015em",
-              color: "#18170f",
-              marginBottom: "clamp(8px, 1.2vw, 14px)",
-              maxWidth: "min(560px, 90vw)",
-            }}
-          >
-            Engineered for silence.
-          </h1>
+          {/* ── Typography (Top Section - Compressed to save space) ── */}
+          <div className="shrink-0 flex flex-col items-center text-center animate-fade-in-up w-full">
+            <p className="font-light text-[9px] sm:text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-1">
+              Apple Magic Keyboard
+            </p>
+            <h1 className="font-['Playfair_Display'] font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-[#111110] mb-1 max-w-3xl">
+              Engineered for silence.
+            </h1>
+            <p className="font-['Playfair_Display'] italic text-base sm:text-lg md:text-xl text-neutral-500 mb-3 max-w-xl">
+              Every keystroke, perfectly placed.
+            </p>
+            <div className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent via-neutral-300 to-transparent" />
+          </div>
 
-          {/* ── Italic subline ── */}
-          <p
-            className="relative z-10 text-center"
-            style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: "clamp(0.9rem, 2.2vw, 1.4rem)",
-              lineHeight: 1.4,
-              color: "#7c776d",
-              marginBottom: "clamp(20px, 3vw, 36px)",
-              maxWidth: "min(440px, 88vw)",
-            }}
-          >
-            Every keystroke, perfectly placed.
-          </p>
+          {/* ── Keyboard Area (Middle Section) ── */}
+          <div className="flex-1 flex items-center justify-center w-full min-h-0 relative group perspective-[1000px]">
 
-          {/* ── Hairline ── */}
-          <div
-            className="relative z-10"
-            style={{
-              width: "36px",
-              height: "1px",
-              background: "linear-gradient(to right, transparent, #c4bfb6, transparent)",
-              marginBottom: "clamp(24px, 4vw, 44px)",
-            }}
-          />
+            {/* Ambient Backlight / Glow - Expanded slightly to match bigger keyboard */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[55%] bg-white rounded-full blur-[70px] sm:blur-[100px] opacity-70 pointer-events-none transition-opacity duration-700 group-hover:opacity-100" />
 
-          {/* ── Keyboard ── */}
-          <div className="relative z-10 w-full flex justify-center items-center">
-            {/* Ground shadow */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                bottom: "-10px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "min(680px, 88vw)",
-                height: "28px",
-                background:
-                  "radial-gradient(ellipse 75% 100% at 50% 50%, rgba(0,0,0,0.12) 0%, transparent 100%)",
-                filter: "blur(10px)",
-              }}
-            />
-            <div className="kb-zoom origin-center">
+            {/* Ground Shadow */}
+            <div className="absolute bottom-[2%] sm:bottom-[8%] left-1/2 -translate-x-1/2 w-[90%] max-w-4xl h-6 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(0,0,0,0.1)_0%,transparent_100%)] blur-md pointer-events-none" />
+
+            {/* Keyboard Component */}
+            <div className="kb-zoom origin-center relative transition-transform duration-700 ease-out group-hover:-translate-y-1 sm:group-hover:-translate-y-2">
               <Keyboard />
             </div>
           </div>
 
-          {/* ── Spec strip ── */}
-          <div
-            className="spec-strip relative z-10 flex items-center"
-            style={{
-              marginTop: "clamp(24px, 4vw, 48px)",
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 300,
-              fontSize: "9px",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#b0aca4",
-            }}
-          >
-            {["Scissor Switch", "Backlit Keys", "Bluetooth 5.3", "USB-C"].map((s, i, arr) => (
-              <span key={s} style={{ display: "flex", alignItems: "center", gap: "18px" }}>
-                <span>{s}</span>
-                {i < arr.length - 1 && (
-                  <span className="spec-diamond" style={{ color: "#ccc9c2", fontSize: "7px" }}>
-                    ◆
-                  </span>
+          {/* ── Spec Strip (Bottom Section) ── */}
+          <div className="shrink-0 flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-10 gap-y-2 mt-1 font-['Outfit'] font-light text-[8px] sm:text-[10px] tracking-[0.2em] uppercase text-neutral-400">
+            {["Scissor Switch", "Backlit Keys", "Bluetooth 5.3", "USB-C"].map((spec, index, arr) => (
+              <div key={spec} className="flex items-center gap-4 sm:gap-10">
+                <span className="hover:text-neutral-600 transition-colors cursor-default">{spec}</span>
+                {index < arr.length - 1 && (
+                  <span className="hidden sm:inline text-neutral-300 text-[6px]">◆</span>
                 )}
-              </span>
+              </div>
             ))}
           </div>
+
         </main>
 
         <Footer />
