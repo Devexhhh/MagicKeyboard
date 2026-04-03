@@ -1,31 +1,12 @@
 export function Footer() {
     return (
-        <>
-            <style>{`
-        .ft-right { display: none; }
-        @media (min-width: 480px) { .ft-right { display: block; } }
-      `}</style>
-
-            <footer
-                style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontWeight: 300,
-                    height: "44px",
-                    background: "#111110",
-                    borderTop: "1px solid rgba(255,255,255,0.055)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    padding: "0 clamp(1rem, 4vw, 2.5rem)",
-                    fontSize: "10px",
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.20)",
-                }}
-            >
-                <span>© {new Date().getFullYear()} Devex</span>
-                <span className="ft-right">Magic Keyboard UI</span>
-            </footer>
-        </>
+        <footer className="w-full h-10 sm:h-12 shrink-0 flex items-center justify-between px-6 sm:px-12 border-t border-neutral-200/60 bg-transparent relative z-10">
+            <span className="font-['Outfit'] font-light text-[9px] sm:text-[10px] tracking-[0.14em] uppercase text-neutral-400">
+                © {new Date().getFullYear()} Devex
+            </span>
+            <span className="hidden sm:block font-['Outfit'] font-light text-[10px] tracking-[0.14em] uppercase text-neutral-400">
+                Magic Keyboard UI
+            </span>
+        </footer>
     );
 }
